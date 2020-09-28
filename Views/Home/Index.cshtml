@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form method="post" action="/Home/GenerateReport">
+<div class="form-group row">
+    <div class="col-xs-3">
+        <label for="ex1">Interval</label>
+        <input type="text" class="form-control input-sm" id="interval" />
+    </div>
+
+    <div class="col-xs-3" style="margin-left: 10px;">
+        <label for="ex2">Direction</label>
+        <input type="text" class="form-control input-sm" id="interval" />
+    </div>
+</div>  
+  <button type="submit" class="btn btn-primary">Generate report</button>
+  <button type="reset" class="btn btn-primary" onclick="deleteButton()">Delete</button>
+</form>
+
+@if(ViewBag.FormPosted != null && (bool)ViewBag.FormPosted)
+{
+    <div class="text-center">
+        <p><img src="@Url.Content("~/images/Screenshot1.png")" /></p>
+        <p><img src="@Url.Content("~/images/Screenshot2.png")" /></p>
+    </div>
+}
+
+<script>
+    function deleteButton() {
+        window.location = "/";
+    }
+</script>
